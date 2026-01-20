@@ -1,9 +1,18 @@
 "use client";
 
+import Image from "next/image";
+
 export const Header = () => {
   return (
     <header className="flex flex-col gap-2 py-2 sm:py-4">
       <div className="flex items-center gap-3">
+        <Image
+          src="/icons/enews-icon.png"
+          width={32}
+          height={32}
+          alt="ENews"
+          className="sm:hidden"
+        />
         <div className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
           ENews
         </div>

@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   title: "ENews - Experience News",
   description: "Video-first news com curadoria premium e fila inteligente.",
   manifest: "/manifest.json",
+  icons: {
+    icon: "/icons/enews-icon.png",
+    apple: "/icons/enews-icon.png",
+  },
 };
 
 export const viewport = {
