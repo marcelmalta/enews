@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "ENews - Experience News",
   description: "Video-first news com curadoria premium e fila inteligente.",
   manifest: "/manifest.json",
+};
+
+export const viewport = {
   themeColor: "#0b0b0b",
 };
 
