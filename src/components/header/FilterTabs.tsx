@@ -1,35 +1,33 @@
 "use client";
 
-import type { ThemeFilter } from "@/lib/store/filters";
-
-type ThemeTab = {
-  id: ThemeFilter;
+type FilterTab = {
+  id: string;
   label: string;
 };
 
-type ThemeTabsProps = {
-  themes: ThemeTab[];
-  value: ThemeFilter;
-  onChange: (value: ThemeFilter) => void;
+type FilterTabsProps = {
+  options: FilterTab[];
+  value: string;
+  onChange: (value: string) => void;
 };
 
-export const ThemeTabs = ({ themes, value, onChange }: ThemeTabsProps) => {
+export const FilterTabs = ({ options, value, onChange }: FilterTabsProps) => {
   return (
     <div className="flex gap-2 overflow-x-auto pb-1">
-      {themes.map((theme) => {
-        const isActive = theme.id === value;
+      {options.map((option) => {
+        const isActive = option.id === value;
         return (
           <button
-            key={theme.id}
+            key={option.id}
             type="button"
-            onClick={() => onChange(theme.id)}
+            onClick={() => onChange(option.id)}
             className={`whitespace-nowrap rounded-full border px-4 py-2 text-xs uppercase tracking-[0.2em] transition ${
               isActive
                 ? "border-transparent bg-gradient-to-r from-[#f6c945] to-[#ff8a00] text-black shadow-[0_0_20px_rgba(246,201,69,0.25)]"
                 : "border-white/10 bg-[#111111] text-[#b0b0b0] hover:text-white"
             }`}
           >
-            {theme.label}
+            {option.label}
           </button>
         );
       })}

@@ -1,26 +1,107 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --enews-bg: #0b0b0b;
+  --enews-card: #111111;
+  --enews-card-strong: #121212;
+  --enews-text: #ffffff;
+  --enews-text-muted: #b0b0b0;
+  --enews-accent: #f6c945;
+  --enews-accent-strong: #ff8a00;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--enews-bg);
+  --color-foreground: var(--enews-text);
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-plex-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(
+      1200px circle at 20% -10%,
+      rgba(246, 201, 69, 0.18),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px circle at 80% 10%,
+      rgba(255, 138, 0, 0.12),
+      transparent 60%
+    ),
+    var(--enews-bg);
+  color: var(--enews-text);
+  font-family: var(--font-sans), "Space Grotesk", sans-serif;
+}
+
+img {
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+.modal-backdrop {
+  animation: modalFadeIn 0.2s ease;
+}
+
+.modal-backdrop[data-state="closing"] {
+  animation: modalFadeOut 0.18s ease forwards;
+}
+
+.modal-panel {
+  animation: modalSlideUp 0.25s ease;
+}
+
+.modal-panel[data-state="closing"] {
+  animation: modalSlideDown 0.2s ease forwards;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalSlideDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(16px);
+  }
 }
