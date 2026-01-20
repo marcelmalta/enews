@@ -2,16 +2,19 @@
 
 export const Header = () => {
   return (
-    <header className="flex flex-col gap-2">
+    <header className="flex flex-col gap-2 py-2 sm:py-4">
       <div className="flex items-center gap-3">
-        <div className="text-3xl font-semibold tracking-tight text-white">
+        <div className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
           ENews
         </div>
-        <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-[#b0b0b0]">
+        <span className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-[#b0b0b0] sm:inline-flex">
           Experience News
         </span>
       </div>
-      <p className="max-w-xl text-sm text-[#b0b0b0]">
+      <p className="max-w-xl text-xs text-[#b0b0b0] sm:hidden line-clamp-1">
+        Video-first news, direto ao ponto.
+      </p>
+      <p className="hidden max-w-xl text-sm text-[#b0b0b0] sm:block">
         Video-first news com contexto rapido, filtros inteligentes e fila
         personalizada.
       </p>

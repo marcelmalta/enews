@@ -271,7 +271,7 @@ export default function HomeClient({ initialVideoId }: HomeClientProps) {
 
   return (
     <div className="min-h-screen pb-32">
-      <main className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 pb-10 pt-10 sm:px-8">
+      <main className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 pb-10 pt-6 sm:gap-10 sm:px-8 sm:pt-10">
         <Header />
         <FiltersBar
           themes={themeOptions}
