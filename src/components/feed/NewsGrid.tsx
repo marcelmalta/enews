@@ -19,7 +19,7 @@ export const NewsGrid = ({
   onToggleQueue,
 }: NewsGridProps) => {
   return (
-    <section className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+    <section className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
       {items.map((item) => (
         <NewsCard
           key={item.id}

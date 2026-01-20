@@ -41,7 +41,7 @@ export const NewsCard = ({
           : "border-white/5 hover:border-white/15"
       }`}
     >
-      <div className="relative aspect-square w-full overflow-hidden bg-black/40">
+      <div className="relative aspect-[9/16] w-full overflow-hidden bg-black/40 sm:aspect-square">
         <img
           src={thumb}
           alt={item.title}
@@ -49,14 +49,14 @@ export const NewsCard = ({
           decoding="async"
           className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
         />
-        <div className="absolute left-3 top-3">
-          <span className="rounded-full border border-white/10 bg-black/60 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-white">
+        <div className="absolute left-2 top-2 sm:left-3 sm:top-3">
+          <span className="hidden rounded-full border border-white/10 bg-black/60 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-white sm:inline-flex">
             {theme ? getThemeLabel(theme) : "Tema"}
           </span>
         </div>
-        <div className="absolute right-3 top-3 flex flex-col items-end gap-2">
+        <div className="absolute right-2 top-2 flex flex-col items-end gap-2 sm:right-3 sm:top-3">
           {watched ? (
-            <span className="rounded-full border border-white/20 bg-black/60 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-white">
+            <span className="rounded-full border border-white/20 bg-black/60 px-2 py-0.5 text-[10px] uppercase tracking-[0.2em] text-white sm:px-3 sm:py-1 sm:text-[11px]">
               ✓ Visto
             </span>
           ) : null}
@@ -66,9 +66,11 @@ export const NewsCard = ({
           />
         </div>
       </div>
-      <div className="flex flex-1 flex-col justify-between gap-2 px-4 py-4">
-        <div className="text-sm font-medium text-white">{item.title}</div>
-        <div className="text-xs uppercase tracking-[0.25em] text-[#b0b0b0]">
+      <div className="flex flex-1 flex-col justify-between gap-2 px-3 py-3 sm:px-4 sm:py-4">
+        <div className="text-xs font-medium text-white line-clamp-2 sm:text-sm sm:line-clamp-none">
+          {item.title}
+        </div>
+        <div className="text-[10px] uppercase tracking-[0.25em] text-[#b0b0b0] sm:text-xs">
           {formatPtDate(item.publishedAt)}
         </div>
       </div>
